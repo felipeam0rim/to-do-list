@@ -54,13 +54,14 @@ public class TaskController {
     
     public void update(Task task) {
         String sql = "UPDATE tasks SET "
-                + "idPoject = ?, "
+                + "idProject = ?, "
                 + "name = ?, "
                 + "description = ?, "
                 + "notes = ?, "
+                + "completed = ?, "
                 + "deadline = ?, "
                 + "createdAt = ?, "
-                + "updatedAt = ?, "
+                + "updatedAt = ? "
                 + "WHERE id = ?";
         
         Connection connection = null;
@@ -93,7 +94,7 @@ public class TaskController {
             }
     }
     
-    public void removeById(int taskId) throws SQLException {
+    public void removeById(int taskId) {
     
         String sql = "DELETE FROM tasks Where id = ?";
         
